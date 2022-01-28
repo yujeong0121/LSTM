@@ -1,23 +1,19 @@
 # LSTM을 활용한 비트코인 시세 예측하기
 
-Relations: https://www.notion.so/11-165fbecffc3b47cbb2f69d21dff10ae8
-Skills: Colab, Python, Slack
-진행 기간: 2022/01/03 → 2022/01/07
-팀 구성: 박유정, 김호준, 김찬희,정새하, 정한슬
-
 ### 🔗 Link
 
 **Source**
 
-[LSTM/code at master · yujeong0121/LSTM](https://github.com/yujeong0121/LSTM/tree/master/code)
+[소스코드와 데이터를 보시려면 여기를 클릭해주세요](https://github.com/yujeong0121/LSTM/tree/master/code)
 
 **PPT**
 
-[](https://github.com/yujeong0121/LSTM/blob/main/%EC%82%BC%EC%82%BC%EC%98%A4%EC%98%A4_LSTM%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8%20%EC%8B%9C%EC%84%B8%20%EC%98%88%EC%B8%A1.pdf)
+[발표자료를 보시려면 여기를 클릭해주세요](https://github.com/yujeong0121/LSTM/blob/main/%EC%82%BC%EC%82%BC%EC%98%A4%EC%98%A4_LSTM%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8%20%EC%8B%9C%EC%84%B8%20%EC%98%88%EC%B8%A1.pdf)
 
 ## ✍️ 요약
 
-![비트코인-001 (4).png](LSTM%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%A6%20%E1%84%8B%E1%85%A8%E1%84%8E%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%206a8c75f83c1a4be5a958d25d5fd49a84/%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-001_(4).png)
+![요약](https://user-images.githubusercontent.com/94778140/151474602-bbda7dc0-fa46-40e3-9df3-695f1b3f85ed.png)
+
 
 - Work Team & Member
     - 팀명: 삼삼오오
@@ -39,7 +35,8 @@ Skills: Colab, Python, Slack
     - test: 2022년 1월 1일~ 1월 3일 분당 종가
     - 실시간 예측 데이터: 직전 30분간의 데이터로 1분 뒤의 시세 예측
     
-    ![Untitled](LSTM%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%A6%20%E1%84%8B%E1%85%A8%E1%84%8E%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%206a8c75f83c1a4be5a958d25d5fd49a84/Untitled.png)
+  ![data](https://user-images.githubusercontent.com/94778140/151474667-eb808388-b853-47ff-931a-19f4e0338ee8.PNG)
+
     
 
 ## 🛠 사용 라이브러리
@@ -58,13 +55,15 @@ Skills: Colab, Python, Slack
 
 ## ✨ 결과
 
-![Untitled](LSTM%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%A6%20%E1%84%8B%E1%85%A8%E1%84%8E%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%206a8c75f83c1a4be5a958d25d5fd49a84/Untitled%201.png)
+![결과 시각화](https://user-images.githubusercontent.com/94778140/151474877-f4e5d354-2e26-4605-8493-0b14086848c8.png)
+
 
 직전  30분간의 누적 데이터로 1분 후 데이터 예측 (2022년 1월 4일 13:30분 기준)
 
-![Untitled](LSTM%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%A6%20%E1%84%8B%E1%85%A8%E1%84%8E%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%206a8c75f83c1a4be5a958d25d5fd49a84/Untitled%202.png)
+![시세 예측 코드](https://user-images.githubusercontent.com/94778140/151474857-1c1a4176-3335-4563-9c6b-52b144723825.png)
 
-![current.jpg](LSTM%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%A6%20%E1%84%8B%E1%85%A8%E1%84%8E%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%206a8c75f83c1a4be5a958d25d5fd49a84/current.jpg)
+![current](https://user-images.githubusercontent.com/94778140/151474746-5499eb6f-d274-4e8f-a7fb-3fbded5d281b.jpg)
+
 
 ## 💡 성장한 부분
 
